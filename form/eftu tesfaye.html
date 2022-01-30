@@ -5,12 +5,37 @@
   <meta charset="UTF-8">
   <meta name=" description" content="life-hacks">
   <meta name=" key words" content="Life, Life hacks, Jack Ma, Eric Hoffer, Power of Self-Education, Overcame Failure">
+  <script>
+
+ function swap()
+   {  
+        var txt1 = document.getElementById("img1");  
+         var txt2 = document.getElementById("img2");  
+          var txt = txt1.src;   txt1.src = txt2.src;   
+          txt2.src = txt; 
+           } 
+         
+function removeAudio(){
+       var aud= document.getElementById('audi')
+      aud.remove();
+}
+function createElem(){
+var ele = document.createElement('h1');
+var contain= document.createTextNode("This is JavaScript DOM exercise" );
+   ele.appendChild(contain);
+   //ele.style.textAlign; center;
+var hold = document.getElementById('#t');
+hold.insertBefore(ele, hold.firstElementChild);
+}
+ </script>
  </head>
  <body>
   <table width="100%">
    <tr>
     <td width="10%"></td>
-    <td width="60%"><img src="logo_gold.png" width="60" height="100" ></td>
+    <td width="60%"><img src="logo_gold.png" width="60" height="100"id="img1" >
+     <button onclick="swap()">Swap</button>
+     <button onclick="createElem()">Create</button></td>
     <td width="20%">
     <a href=" ">Podcast</a> | 
     <a href=" ">Articles</a> | 
@@ -23,7 +48,7 @@
    <table width="100%">
     <tr>
      <td width="10%"></td>
-     <td colspan="2" align="right" ><a href="gotobuttum.html">Go to buttum</a></td>
+     <td id= "#t"colspan="2" align="right" ><a href="gotobuttum.html">Go to buttum</a></td>
      <td width="10%"></td>
     </tr>
     <tr>
@@ -31,7 +56,7 @@
       <td width="10%"></td>
       <td width="60%">
       <h1>Eric Hoffer and the Power of Self-Education</h1><br>
-      <img src="life1.JPG" width="840" height="400" usemap="#image-map">
+      <img id="img2" src="life1.JPG" width="840" height="400" usemap="#image-map">
       <map name="image-map">
       <area target="_blank" alt="beautiful sunset and sunrise in ethiopia" title="beautiful sunset and sunrise in ethiopia" href="https://th.bing.com/th/id/OIP.2HNOgyAm5eOCNJIWMDZQ-AHaGb?pid=ImgDet&rs=1" coords="29,70,516,321" shape="rect">
       <area target="_blank" alt="visitor's bag when you visit etiopia" title="visitor's bag when you visit etiopia" href="https://th.bing.com/th/id/OIP.fleAlDE24DbF5MH_-XnUmAHaHa?pid=ImgDet&rs=1" coords="650,227,667,285,682,329,742,320,727,231,699,193" shape="polygon">
@@ -54,11 +79,11 @@ Here is how<a href="">Wikipidea</a> put it...<a href="">read more</a></p>
 <hr>
        <p><b>New Podcast</b></p>
        <h2>Jack Ma - How I Overcame Failure</h2>
-       <audio controls onplay="alert('Audio is ready to play')
-" onpause="alert('Audio is paused')"src="Jack Ma - How I Overcame Failure.mp3"></audio>
+       <audio id ="audi" controls onplay="alert('Audio is ready to play')
+" onpause="alert('Audio is paused')"src="Jack Ma - How I Overcame Failure.mp3"></audio><button onclick="removeAudio()">Remove</button>
 <hr>
        <p style="font-size:200%"><b>Pick of The Week</b></p>
-    <video controls onplay="alert('video is ready to play')
+    <video  id="video" controls onplay="alert('video is ready to play')
 " onpause="alert('video is paused')"src="24_HOURS.wmv"></video>
 <hr>
        </td>
