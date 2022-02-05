@@ -7,6 +7,32 @@
 <meta name=" author" content="Eftu Tesfaye">
 
 <title>register</title>
+
+<script>
+function User(planeName){
+this.name=planeName;
+this.print=function(){
+document.getElementById("txt").innerHTML=this.name+" ";
+}
+}
+var UserMe=new User("txt");
+
+User.prototype.info=function(){
+var i=document.getElementById("name").value;
+var j=document.getElementById("phone").value;
+var k=document.getElementById("age").value;
+var p=document.getElementById("color").value;
+var l=document.getElementById("birthdate").value;
+var n=document.getElementById("skills").checked;
+var o=document.getElementById("country").value;
+document.getElementById("txt").innerHTML="<h1>Registered</h1>\n<h2>Welcome "+i+"</h2>\n<b>Your full info</b>\nName: <i>"+i+"</i>\nPhone Number: "+j+"\nYou are: "+k+" years old"+"\nYour favourite color: "+p+" 'airplane'\nBirthdate: "+l+"\nSkills: "+n+"\nCountry: "+o;
+var pre=document.getElementById("data");
+var arr=pre.childNodes;
+for(var x=0;x<(arr.length-4);x++){
+arr[x].innerHTML=" ";}
+}
+
+</script>	
 </head>
 
 <body >
@@ -29,12 +55,12 @@
                 <td colspan="2" align="right" ><a href="gotobottum.html">Go To bottum</a></td>  
                 <td width="10%"></td>
             </tr>
-            <tr>
+         <pre id ="txt" onclick="UserMe.print()"></pre>
+            <tr id="data">
                 <br>
                 <td width="10%"></td>
                 <td width="60%">
-                   
-
+                <p id="para">   
 <p onmousedown="myFunction(this,'red')" 
 onmouseup="myFunction(this,'green')"> Registration form</p>
 <script>
@@ -43,8 +69,6 @@ onmouseup="myFunction(this,'green')"> Registration form</p>
         elmnt.style.color=clr;
     }
 </script>
-
-
 
                     <fieldset>
                         <legend><h1>Register</h1> </legend>
@@ -59,21 +83,17 @@ function change(){
 var x =document.getElementById("name");
 x.value=x.value.toUpperCase();}
 </script>
-
-
-
-     
           <br /><br />
-         Phone<br><input type="tel" name="tel"/>
+          Phone<br><input name="tel" id="phone"/>
 <br /><br />
-		 age<br><input type="number " name="age" min="18" max="20" />
+		 age<br><input type="number " name="age" min="18" max="20" id="age" />
 <br /><br />
-		 your Favorite color<br> <input type="color" name="color" value="green" />
+		 your Favorite color<br> <input type="color" name="color" value="green" id="color" />
 <br /><br />
-		 Birthdate<br> <input type="date" name="birthdate" minlength="6" maxlength="32" placeholder="Password"/>
+		 Birthdate<br> <input type="date" name="birthdate" minlength="6" maxlength="32" id="birthdate">
 <br /><br />
 		 Gender <br>
- Female <input type="radio" name="gender" />
+ Female <input type="radio" name="gender" id="gender"/>
  Male <input type="radio" name="gender" />
 <br /><br />
 		 Password <br><input type="password" name="password" minlength="6" maxlength="32" placeholder="Password"/>
@@ -82,7 +102,7 @@ x.value=x.value.toUpperCase();}
 <br /><br />
  		 Skills 
 
-<ul type="square">
+<ul type="square" id= "skills">
 <li><input type="checkbox" name="skills" value="on">HTML</li><br>
 <li><input type="checkbox" name="skills" value="on">CSS</li><br>
 <li><input type="checkbox" name="skills" value="on">JavaScript</li><br>
@@ -106,14 +126,7 @@ x.value=x.value.toUpperCase();}
                  <input type ="reset" value="Reset">
 <br />
   		</form>
-                    </fieldset>
-
-
-
-
-
-                  
-
+			 </fieldset>
                     <p>click here if you need help.</p>
                       <button id="myBtn">HELP</button>
                     <p id="demo"></p>
@@ -123,21 +136,7 @@ x.value=x.value.toUpperCase();}
                       document.getElementById("demo").innerHTML = "Your registration code is 45326 <br>please try after 30min.";
                     });
                     </script>
-                    
                    
-
-
-
-
-
-
-
-
-
-
-
-
-
 </td>
                <td width="20%">
 <h2>Recent Posts</h2>
